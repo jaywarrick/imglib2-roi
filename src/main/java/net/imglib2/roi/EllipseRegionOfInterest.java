@@ -2,7 +2,7 @@
  * #%L
  * ImgLib2: a general-purpose, multidimensional image processing library.
  * %%
- * Copyright (C) 2009 - 2016 Tobias Pietzsch, Stephan Preibisch, Stephan Saalfeld,
+ * Copyright (C) 2009 - 2017 Tobias Pietzsch, Stephan Preibisch, Stephan Saalfeld,
  * John Bogovic, Albert Cardona, Barry DeZonia, Christian Dietz, Jan Funke,
  * Aivar Grislis, Jonathan Hale, Grant Harris, Stefan Helfrich, Mark Hiner,
  * Martin Horn, Steffen Jaensch, Lee Kamentsky, Larry Lindsey, Melissa Linkert,
@@ -44,7 +44,7 @@ import net.imglib2.RealPositionable;
  * A (hyper) ellipse defined by an origin and a radius per dimension where the
  * region of interest is defined by:
  * 
- * &sum;((X<sup>n</sup> - O<sup>n</sup>)/R<sup>n</sup>)<sup>2</sup> <= 1
+ * &sum;((X<sup>n</sup> - O<sup>n</sup>)/R<sup>n</sup>)<sup>2</sup> &lt;= 1
  * 
  * 
  * @author Lee Kamentsky

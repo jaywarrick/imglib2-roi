@@ -2,7 +2,7 @@
  * #%L
  * ImgLib2: a general-purpose, multidimensional image processing library.
  * %%
- * Copyright (C) 2009 - 2016 Tobias Pietzsch, Stephan Preibisch, Stephan Saalfeld,
+ * Copyright (C) 2009 - 2017 Tobias Pietzsch, Stephan Preibisch, Stephan Saalfeld,
  * John Bogovic, Albert Cardona, Barry DeZonia, Christian Dietz, Jan Funke,
  * Aivar Grislis, Jonathan Hale, Grant Harris, Stefan Helfrich, Mark Hiner,
  * Martin Horn, Steffen Jaensch, Lee Kamentsky, Larry Lindsey, Melissa Linkert,
@@ -33,10 +33,9 @@
  */
 package net.imglib2.roi.labeling;
 
-import gnu.trove.list.array.TIntArrayList;
-
 import java.util.ArrayList;
 
+import gnu.trove.list.array.TIntArrayList;
 import net.imglib2.AbstractLocalizable;
 import net.imglib2.Interval;
 import net.imglib2.Localizable;
@@ -45,6 +44,7 @@ import net.imglib2.RandomAccess;
 import net.imglib2.RealLocalizable;
 import net.imglib2.RealPoint;
 import net.imglib2.RealPositionable;
+import net.imglib2.labeling.Labeling;
 import net.imglib2.outofbounds.OutOfBounds;
 import net.imglib2.outofbounds.OutOfBoundsConstantValue;
 import net.imglib2.roi.PositionableIterableRegion;
@@ -169,7 +169,7 @@ public class LabelRegion< T > extends AbstractLocalizable implements Positionabl
 	public LabelRegionRandomAccess< T > randomAccess()
 	{
 		update();
-		return new LabelRegionRandomAccess< T >( this );
+		return new LabelRegionRandomAccess< T >( this, currentOffset );
 	}
 
 	@Override

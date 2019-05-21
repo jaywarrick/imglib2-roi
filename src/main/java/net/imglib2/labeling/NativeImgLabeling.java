@@ -2,7 +2,7 @@
  * #%L
  * ImgLib2: a general-purpose, multidimensional image processing library.
  * %%
- * Copyright (C) 2009 - 2016 Tobias Pietzsch, Stephan Preibisch, Stephan Saalfeld,
+ * Copyright (C) 2009 - 2017 Tobias Pietzsch, Stephan Preibisch, Stephan Saalfeld,
  * John Bogovic, Albert Cardona, Barry DeZonia, Christian Dietz, Jan Funke,
  * Aivar Grislis, Jonathan Hale, Grant Harris, Stefan Helfrich, Mark Hiner,
  * Martin Horn, Steffen Jaensch, Lee Kamentsky, Larry Lindsey, Melissa Linkert,
@@ -80,12 +80,9 @@ public class NativeImgLabeling< T extends Comparable< T >, I extends IntegerType
 	 * Create a labeling backed by a native image with custom strategy and image
 	 * factory
 	 * 
-	 * @param dim
-	 *            - dimensions of the labeling
 	 * @param strategyFactory
 	 *            - the strategy factory that drives iteration and statistics
-	 * @param imgFactory
-	 *            - the image factory to generate the native image
+	 * @param img
 	 */
 	public NativeImgLabeling( final LabelingROIStrategyFactory< T > strategyFactory, final Img< I > img )
 	{

@@ -2,7 +2,7 @@
  * #%L
  * ImgLib2: a general-purpose, multidimensional image processing library.
  * %%
- * Copyright (C) 2009 - 2016 Tobias Pietzsch, Stephan Preibisch, Stephan Saalfeld,
+ * Copyright (C) 2009 - 2017 Tobias Pietzsch, Stephan Preibisch, Stephan Saalfeld,
  * John Bogovic, Albert Cardona, Barry DeZonia, Christian Dietz, Jan Funke,
  * Aivar Grislis, Jonathan Hale, Grant Harris, Stefan Helfrich, Mark Hiner,
  * Martin Horn, Steffen Jaensch, Lee Kamentsky, Larry Lindsey, Melissa Linkert,
@@ -39,6 +39,7 @@ import net.imglib2.RandomAccessibleInterval;
 import net.imglib2.roi.util.IterableRandomAccessibleRegion;
 import net.imglib2.roi.util.SamplingIterableInterval;
 import net.imglib2.type.BooleanType;
+import net.imglib2.view.Views;
 
 public class Regions
 {
@@ -57,5 +58,14 @@ public class Regions
 			return ( IterableRegion< B > ) region;
 		else
 			return IterableRandomAccessibleRegion.create( region );
+	}
+
+	public static < T extends BooleanType< T > > long countTrue( final RandomAccessibleInterval< T > interval )
+	{
+		long sum = 0;
+		for ( final T t : Views.iterable( interval ) )
+			if ( t.get() )
+				++sum;
+		return sum;
 	}
 }
